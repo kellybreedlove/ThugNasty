@@ -13,7 +13,7 @@ namespace Camellia {
 
 class Var {
 public:
-  // Var();
+  //Var();
   int ID();
   // const string & name()
   string displayString();
