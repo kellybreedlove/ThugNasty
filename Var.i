@@ -35,4 +35,40 @@ public:
 class VarPtr {
 public:
   Var* operator->();
+
+  LinearTermPtr __mul__(double w) {
+    return *self * w;
+  }
+
+  LinearTermPtr __rmul__(double w) {
+    return *self * w:
+  }
+
+  LinearTermPtr __mul__(vector<double> w) {
+    return *self * w;
+  }
+
+  LinearTermPtr __rmul__(vector<double> w) {
+    return *self * w;
+  }
+
+  LinearTermPtr __add__(VarPtr v) {
+    return *self + v;
+  }
+
+  LinearTermPtr __div__(double w) {
+    return *self / w;
+  }
+
+  LinearTermPtr __div__(Function Ptr f) {
+    return *self / f;
+  }
+
+  LinearTermPtr __sub__(VarPtr v) {
+    return *self - v;
+  }
+
+  LinearTermPtr __sub__() {
+    return - *self;
+  }
 };
