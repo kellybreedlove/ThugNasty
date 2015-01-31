@@ -36,5 +36,4 @@ class Solution {
   void saveToHDF5(string filename);
   void loadFromHDF5(string filename);
   void setUseCondensedSolve(bool value);
-  void setUseCondensedSolve(bool value);
 };

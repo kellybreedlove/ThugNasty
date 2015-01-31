@@ -16,13 +16,13 @@ INCLUDE_ALL="-I$PYTHON_INCLUDE -I$CAMELLIA_INCLUDE -I$Trilinos_INCLUDE_DIRS -I$H
 LINK_ALL="-lpython2.7 -L$Trilinos_LIBRARY_DIRS $Trilinos_LIBRARIES_LINK_LINE -L$CAMELLIA_LIB_DIR -lCamellia"
 #echo $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Var.i
-#$CPP -c -Wall -fpic Var_wrap.cxx $INCLUDE_ALL
-#$CPP -shared Var_wrap.o -o _Var.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Var.i
+$CPP -c -Wall -fpic Var_wrap.cxx $INCLUDE_ALL
+$CPP -shared Var_wrap.o -o _Var.so $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE VarFactory.i
-#$CPP -c -Wall -fpic VarFactory_wrap.cxx $INCLUDE_ALL
-#$CPP -shared VarFactory_wrap.o -o _VarFactory.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE VarFactory.i
+$CPP -c -Wall -fpic VarFactory_wrap.cxx $INCLUDE_ALL
+$CPP -shared VarFactory_wrap.o -o _VarFactory.so $LINK_ALL
 
 #swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Function.i
 #$CPP -c -Wall -fpic Function_wrap.cxx $INCLUDE_ALL
@@ -60,9 +60,9 @@ LINK_ALL="-lpython2.7 -L$Trilinos_LIBRARY_DIRS $Trilinos_LIBRARIES_LINK_LINE -L$
 #$CPP -c -Wall -fpic MeshFactory_wrap.cxx $INCLUDE_ALL
 #$CPP -shared MeshFactory_wrap.o -o _MeshFactory.so $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Solution.i
-#$CPP -c -Wall -fpic Solution_wrap.cxx $INCLUDE_ALL
-#$CPP -shared Solution_wrap.o -o _Solution.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE Solution.i
+$CPP -c -Wall -fpic Solution_wrap.cxx $INCLUDE_ALL
+$CPP -shared Solution_wrap.o -o _Solution.so $LINK_ALL
 
 #swig -Wall -c++ -python -I$CAMELLIA_INCLUDE HDF5Exporter.i
 #$CPP -c -Wall -fpic HDF5Exporter_wrap.cxx $INCLUDE_ALL
