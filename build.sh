@@ -28,9 +28,9 @@ $CPP -shared VarFactory_wrap.o -o _VarFactory.so $LINK_ALL
 #$CPP -c -Wall -fpic Function_wrap.cxx $INCLUDE_ALL
 #$CPP -shared Function_wrap.o -o _Function.so $LINK_ALL
 
-#swig -Wall -c++ -python -I$CAMELLIA_INCLUDE LinearTerm.i
-#$CPP -c -Wall -fpic LinearTerm_wrap.cxx $INCLUDE_ALL
-#$CPP -shared LinearTerm_wrap.o -o _LinearTerm.so $LINK_ALL
+swig -Wall -c++ -python -I$CAMELLIA_INCLUDE LinearTerm.i
+$CPP -c -Wall -fpic LinearTerm_wrap.cxx $INCLUDE_ALL
+$CPP -shared LinearTerm_wrap.o -o _LinearTerm.so $LINK_ALL
 
 #swig -Wall -c++ -python -I$CAMELLIA_INCLUDE IP.i
 #$CPP -c -Wall -fpic IP_wrap.cxx $INCLUDE_ALL

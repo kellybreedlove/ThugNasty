@@ -69,48 +69,115 @@ except AttributeError:
     _newclass = 0
 
 
-class Solution(_object):
+HGRAD = _Var.HGRAD
+HCURL = _Var.HCURL
+HDIV = _Var.HDIV
+HGRAD_DISC = _Var.HGRAD_DISC
+HCURL_DISC = _Var.HCURL_DISC
+HDIV_DISC = _Var.HDIV_DISC
+HDIV_FREE = _Var.HDIV_FREE
+L2 = _Var.L2
+CONSTANT_SCALAR = _Var.CONSTANT_SCALAR
+VECTOR_HGRAD = _Var.VECTOR_HGRAD
+VECTOR_HGRAD_DISC = _Var.VECTOR_HGRAD_DISC
+VECTOR_L2 = _Var.VECTOR_L2
+UNKNOWN_FS = _Var.UNKNOWN_FS
+OP_VALUE = _Var.OP_VALUE
+OP_GRAD = _Var.OP_GRAD
+OP_CURL = _Var.OP_CURL
+OP_DIV = _Var.OP_DIV
+OP_D1 = _Var.OP_D1
+OP_D2 = _Var.OP_D2
+OP_D3 = _Var.OP_D3
+OP_D4 = _Var.OP_D4
+OP_D5 = _Var.OP_D5
+OP_D6 = _Var.OP_D6
+OP_D7 = _Var.OP_D7
+OP_D8 = _Var.OP_D8
+OP_D9 = _Var.OP_D9
+OP_D10 = _Var.OP_D10
+OP_X = _Var.OP_X
+OP_Y = _Var.OP_Y
+OP_Z = _Var.OP_Z
+OP_DX = _Var.OP_DX
+OP_DY = _Var.OP_DY
+OP_DZ = _Var.OP_DZ
+OP_CROSS_NORMAL = _Var.OP_CROSS_NORMAL
+OP_DOT_NORMAL = _Var.OP_DOT_NORMAL
+OP_TIMES_NORMAL = _Var.OP_TIMES_NORMAL
+OP_TIMES_NORMAL_X = _Var.OP_TIMES_NORMAL_X
+OP_TIMES_NORMAL_Y = _Var.OP_TIMES_NORMAL_Y
+OP_TIMES_NORMAL_Z = _Var.OP_TIMES_NORMAL_Z
+OP_TIMES_NORMAL_T = _Var.OP_TIMES_NORMAL_T
+OP_VECTORIZE_VALUE = _Var.OP_VECTORIZE_VALUE
+TEST = _Var.TEST
+FIELD = _Var.FIELD
+TRACE = _Var.TRACE
+FLUX = _Var.FLUX
+UNKNOWN_TYPE = _Var.UNKNOWN_TYPE
+MIXED_TYPE = _Var.MIXED_TYPE
+class Var(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Solution, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Var, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, Solution, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, Var, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined")
     __repr__ = _swig_repr
-    def __init__(self, *args): 
-        this = _Var.new_Solution(*args)
+    def ID(self): return _Var.Var_ID(self)
+    def name(self): return _Var.Var_name(self)
+    def displayString(self): return _Var.Var_displayString(self)
+    def rank(self): return _Var.Var_rank(self)
+    def space(self): return _Var.Var_space(self)
+    def varType(self): return _Var.Var_varType(self)
+    def op(self): return _Var.Var_op(self)
+    def termTraced(self): return _Var.Var_termTraced(self)
+    def grad(self): return _Var.Var_grad(self)
+    def div(self): return _Var.Var_div(self)
+    def curl(self, *args): return _Var.Var_curl(self, *args)
+    def dx(self): return _Var.Var_dx(self)
+    def dy(self): return _Var.Var_dy(self)
+    def x(self): return _Var.Var_x(self)
+    def y(self): return _Var.Var_y(self)
+    __swig_destroy__ = _Var.delete_Var
+    __del__ = lambda self : None;
+Var_swigregister = _Var.Var_swigregister
+Var_swigregister(Var)
+
+class VarPtr(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, VarPtr, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, VarPtr, name)
+    __repr__ = _swig_repr
+    def __deref__(self): return _Var.VarPtr___deref__(self)
+    def __mul__(self, *args): return _Var.VarPtr___mul__(self, *args)
+    def __rmul__(self, *args): return _Var.VarPtr___rmul__(self, *args)
+    def __add__(self, *args): return _Var.VarPtr___add__(self, *args)
+    def __div__(self, *args): return _Var.VarPtr___div__(self, *args)
+    def __sub__(self, *args): return _Var.VarPtr___sub__(self, *args)
+    def __init__(self): 
+        this = _Var.new_VarPtr()
         try: self.this.append(this)
         except: self.this = this
-    def solve(self): return _Var.Solution_solve(self)
-    def addSolution(self, *args): return _Var.Solution_addSolution(self, *args)
-    def clear(self): return _Var.Solution_clear(self)
-    def cubatureEnrichmentDegree(self): return _Var.Solution_cubatureEnrichmentDegree(self)
-    def setCubatureEnrichmentDegree(self, *args): return _Var.Solution_setCubatureEnrichmentDegree(self, *args)
-    def L2NormOfSolution(self, *args): return _Var.Solution_L2NormOfSolution(self, *args)
-    def projectOntoMesh(self, *args): return _Var.Solution_projectOntoMesh(self, *args)
-    def energyErrorTotal(self): return _Var.Solution_energyErrorTotal(self)
-    def setWriteMatrixToFile(self, *args): return _Var.Solution_setWriteMatrixToFile(self, *args)
-    def setWriteMatrixToMatrixMarketFile(self, *args): return _Var.Solution_setWriteMatrixToMatrixMarketFile(self, *args)
-    def setWriteRHSToMatrixMarketFile(self, *args): return _Var.Solution_setWriteRHSToMatrixMarketFile(self, *args)
-    def mesh(self): return _Var.Solution_mesh(self)
-    def bc(self): return _Var.Solution_bc(self)
-    def rhs(self): return _Var.Solution_rhs(self)
-    def ip(self): return _Var.Solution_ip(self)
-    def setBC(self, *args): return _Var.Solution_setBC(self, *args)
-    def setRHS(self, *args): return _Var.Solution_setRHS(self, *args)
-    def setIP(self, *args): return _Var.Solution_setIP(self, *args)
-    def save(self, *args): return _Var.Solution_save(self, *args)
-    __swig_getmethods__["load"] = lambda x: _Var.Solution_load
-    if _newclass:load = staticmethod(_Var.Solution_load)
-    def saveToHDF5(self, *args): return _Var.Solution_saveToHDF5(self, *args)
-    def loadFromHDF5(self, *args): return _Var.Solution_loadFromHDF5(self, *args)
-    def setUseCondensedSolve(self, *args): return _Var.Solution_setUseCondensedSolve(self, *args)
-    __swig_destroy__ = _Var.delete_Solution
+    __swig_destroy__ = _Var.delete_VarPtr
     __del__ = lambda self : None;
-Solution_swigregister = _Var.Solution_swigregister
-Solution_swigregister(Solution)
-
-def Solution_load(*args):
-  return _Var.Solution_load(*args)
-Solution_load = _Var.Solution_load
+    def ID(self): return _Var.VarPtr_ID(self)
+    def name(self): return _Var.VarPtr_name(self)
+    def displayString(self): return _Var.VarPtr_displayString(self)
+    def rank(self): return _Var.VarPtr_rank(self)
+    def space(self): return _Var.VarPtr_space(self)
+    def varType(self): return _Var.VarPtr_varType(self)
+    def op(self): return _Var.VarPtr_op(self)
+    def termTraced(self): return _Var.VarPtr_termTraced(self)
+    def grad(self): return _Var.VarPtr_grad(self)
+    def div(self): return _Var.VarPtr_div(self)
+    def curl(self, *args): return _Var.VarPtr_curl(self, *args)
+    def dx(self): return _Var.VarPtr_dx(self)
+    def dy(self): return _Var.VarPtr_dy(self)
+    def x(self): return _Var.VarPtr_x(self)
+    def y(self): return _Var.VarPtr_y(self)
+VarPtr_swigregister = _Var.VarPtr_swigregister
+VarPtr_swigregister(VarPtr)
 
 # This file is compatible with both classic and new-style classes.
 
