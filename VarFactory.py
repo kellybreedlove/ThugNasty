@@ -98,6 +98,100 @@ class SwigPyIterator(_object):
 SwigPyIterator_swigregister = _VarFactory.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 
+class IntVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, IntVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, IntVector, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _VarFactory.IntVector_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _VarFactory.IntVector___nonzero__(self)
+    def __bool__(self): return _VarFactory.IntVector___bool__(self)
+    def __len__(self): return _VarFactory.IntVector___len__(self)
+    def pop(self): return _VarFactory.IntVector_pop(self)
+    def __getslice__(self, *args): return _VarFactory.IntVector___getslice__(self, *args)
+    def __setslice__(self, *args): return _VarFactory.IntVector___setslice__(self, *args)
+    def __delslice__(self, *args): return _VarFactory.IntVector___delslice__(self, *args)
+    def __delitem__(self, *args): return _VarFactory.IntVector___delitem__(self, *args)
+    def __getitem__(self, *args): return _VarFactory.IntVector___getitem__(self, *args)
+    def __setitem__(self, *args): return _VarFactory.IntVector___setitem__(self, *args)
+    def append(self, *args): return _VarFactory.IntVector_append(self, *args)
+    def empty(self): return _VarFactory.IntVector_empty(self)
+    def size(self): return _VarFactory.IntVector_size(self)
+    def clear(self): return _VarFactory.IntVector_clear(self)
+    def swap(self, *args): return _VarFactory.IntVector_swap(self, *args)
+    def get_allocator(self): return _VarFactory.IntVector_get_allocator(self)
+    def begin(self): return _VarFactory.IntVector_begin(self)
+    def end(self): return _VarFactory.IntVector_end(self)
+    def rbegin(self): return _VarFactory.IntVector_rbegin(self)
+    def rend(self): return _VarFactory.IntVector_rend(self)
+    def pop_back(self): return _VarFactory.IntVector_pop_back(self)
+    def erase(self, *args): return _VarFactory.IntVector_erase(self, *args)
+    def __init__(self, *args): 
+        this = _VarFactory.new_IntVector(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def push_back(self, *args): return _VarFactory.IntVector_push_back(self, *args)
+    def front(self): return _VarFactory.IntVector_front(self)
+    def back(self): return _VarFactory.IntVector_back(self)
+    def assign(self, *args): return _VarFactory.IntVector_assign(self, *args)
+    def resize(self, *args): return _VarFactory.IntVector_resize(self, *args)
+    def insert(self, *args): return _VarFactory.IntVector_insert(self, *args)
+    def reserve(self, *args): return _VarFactory.IntVector_reserve(self, *args)
+    def capacity(self): return _VarFactory.IntVector_capacity(self)
+    __swig_destroy__ = _VarFactory.delete_IntVector
+    __del__ = lambda self : None;
+IntVector_swigregister = _VarFactory.IntVector_swigregister
+IntVector_swigregister(IntVector)
+
+class VarPtrVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, VarPtrVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, VarPtrVector, name)
+    __repr__ = _swig_repr
+    def iterator(self): return _VarFactory.VarPtrVector_iterator(self)
+    def __iter__(self): return self.iterator()
+    def __nonzero__(self): return _VarFactory.VarPtrVector___nonzero__(self)
+    def __bool__(self): return _VarFactory.VarPtrVector___bool__(self)
+    def __len__(self): return _VarFactory.VarPtrVector___len__(self)
+    def pop(self): return _VarFactory.VarPtrVector_pop(self)
+    def __getslice__(self, *args): return _VarFactory.VarPtrVector___getslice__(self, *args)
+    def __setslice__(self, *args): return _VarFactory.VarPtrVector___setslice__(self, *args)
+    def __delslice__(self, *args): return _VarFactory.VarPtrVector___delslice__(self, *args)
+    def __delitem__(self, *args): return _VarFactory.VarPtrVector___delitem__(self, *args)
+    def __getitem__(self, *args): return _VarFactory.VarPtrVector___getitem__(self, *args)
+    def __setitem__(self, *args): return _VarFactory.VarPtrVector___setitem__(self, *args)
+    def append(self, *args): return _VarFactory.VarPtrVector_append(self, *args)
+    def empty(self): return _VarFactory.VarPtrVector_empty(self)
+    def size(self): return _VarFactory.VarPtrVector_size(self)
+    def clear(self): return _VarFactory.VarPtrVector_clear(self)
+    def swap(self, *args): return _VarFactory.VarPtrVector_swap(self, *args)
+    def get_allocator(self): return _VarFactory.VarPtrVector_get_allocator(self)
+    def begin(self): return _VarFactory.VarPtrVector_begin(self)
+    def end(self): return _VarFactory.VarPtrVector_end(self)
+    def rbegin(self): return _VarFactory.VarPtrVector_rbegin(self)
+    def rend(self): return _VarFactory.VarPtrVector_rend(self)
+    def pop_back(self): return _VarFactory.VarPtrVector_pop_back(self)
+    def erase(self, *args): return _VarFactory.VarPtrVector_erase(self, *args)
+    def __init__(self, *args): 
+        this = _VarFactory.new_VarPtrVector(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    def push_back(self, *args): return _VarFactory.VarPtrVector_push_back(self, *args)
+    def front(self): return _VarFactory.VarPtrVector_front(self)
+    def back(self): return _VarFactory.VarPtrVector_back(self)
+    def assign(self, *args): return _VarFactory.VarPtrVector_assign(self, *args)
+    def resize(self, *args): return _VarFactory.VarPtrVector_resize(self, *args)
+    def insert(self, *args): return _VarFactory.VarPtrVector_insert(self, *args)
+    def reserve(self, *args): return _VarFactory.VarPtrVector_reserve(self, *args)
+    def capacity(self): return _VarFactory.VarPtrVector_capacity(self)
+    __swig_destroy__ = _VarFactory.delete_VarPtrVector
+    __del__ = lambda self : None;
+VarPtrVector_swigregister = _VarFactory.VarPtrVector_swigregister
+VarPtrVector_swigregister(VarPtrVector)
+
 class VarFactory(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, VarFactory, name, value)

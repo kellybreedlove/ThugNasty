@@ -6,6 +6,11 @@
 %include "std_string.i"
 %include "std_vector.i"
 
+namespace std {
+  %template(IntVector) vector<int>;
+  %template(VarPtrVector) vector<VarPtr>;
+ }
+
 class VarFactory {
 public:
   VarFactory();
