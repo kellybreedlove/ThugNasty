@@ -3,7 +3,10 @@
 #include "Solution.h"
 %}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 307e71409dab197340644e39dd441029565579f6
 
 class Solution {
  public:
