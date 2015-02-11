@@ -25,6 +25,6 @@ _%.so : %_wrap.o
 
 % : _%.so ;
 
-all : Var VarFactory LinearTerm PoissonFormulation Solution
+all : Var VarFactory LinearTerm PoissonFormulation Solution StokesVGPFormulation Mesh MeshFactory Function RHS BC IP
 
 .PRECIOUS : _%.so
