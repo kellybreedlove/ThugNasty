@@ -10,8 +10,8 @@
 
 class Solution {
  public:
-  Solution(MeshPtr mesh, BCPtr bc = Teuchos::null,
-	   RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null );
+ static SolutionPtr solution(MeshPtr mesh, BCPtr bc = Teuchos::null,
+			     RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null);
   Solution(const Solution &soln);
   int solve();
   void addSolution(Teuchos::RCP<Solution> soln, double weight,
