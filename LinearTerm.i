@@ -4,13 +4,22 @@
 %}
 
 %include "std_string.i"
+%include "std_set.i"
+%include "std_map.i"
+
+namespace std {
+  %template(IntSet) set<int>;
+  %template(IntToFunctionMap) map<int, FunctionPtr>;
+ }
+
+using namespace std;
 
 class LinearTerm {
 public:
   LinearTerm();
   const set<int> & varIDs();
   VarType termType();
-  FunctionPtr evaluate(map< int, FunctionPtr> &varFunctions);
+  FunctionPtr evaluate(map<int, FunctionPtr> &varFunctions);
   int rank();
   string displayString();
 

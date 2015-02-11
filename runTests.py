@@ -1,9 +1,11 @@
-from TestAdder import * #this syntax imports whatever is defined in TestAdder into the current namespace
-from TestTimes import *
+from TestVar import * 
+#from TestVarFactory import *
+#from TestSolution import *
 import unittest
 
-testSuite = unittest.makeSuite(TestAdder)
-testSuite.addTest(unittest.makeSuite(TestTimes))
+testSuite = unittest.makeSuite(TestVar)
+#testSuite.addTest(unittest.makeSuite(TestVarFactory))
+#testSuite.addTest(unittest.makeSuite(TestSolution))
 
 testRunner = unittest.TextTestRunner()
 testRunner.run(testSuite)

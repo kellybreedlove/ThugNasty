@@ -1,9 +1,8 @@
-%module Var
+%module Solution
 %{
 #include "Solution.h"
 %}
 
-// where are the .h files? swag
 
 class Solution {
  public:

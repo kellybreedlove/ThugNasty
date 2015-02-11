@@ -1,10 +1,11 @@
+from Var import *
 from VarFactory import *
 from LinearTerm import *
 import unittest
 
 class TestVarFactory(unittest.TestCase):
 	
-	#"""Test VarFactory.py's testVar() method"""
+	"""Test VarFactory.py's testVar() method"""
  	def testTestVar(self):
 		factory = VarFactory()
 		a = factory.testVar("Billy Joe", HGRAD)
@@ -13,7 +14,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(a.getSpace(), HGRAD) 
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
 
-	#"""Test VarFactory.py's FieldVar() method"""
+	"""Test VarFactory.py's FieldVar() method"""
  	def testFieldVar(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Crowe")
@@ -21,7 +22,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(a.getName(), "Crowe")#check name
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
 
-	#"""Test VarFactory.py's fluxVar() method"""
+	"""Test VarFactory.py's fluxVar() method"""
  	def testFluxVar(self):
 		factory = VarFactory()
 		lt = LinearTerm()
@@ -30,7 +31,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(a.getName(), "Crowe")#check name
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
 
-	#"""Test VarFactory.py's traceVar() method"""
+	"""Test VarFactory.py's traceVar() method"""
  	def testTraceVar(self):
 		factory = VarFactory()
 		lt = LinearTerm()
@@ -47,7 +48,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
 		self.assertEqual(a.getSpace(), HGRAD)
 	
-	#"""Test VarFactory.py's test() method"""
+	"""Test VarFactory.py's test() method"""
 	def testTest(self):
 		factory = VarFactory()
 		a = factory.testVar("Billy Joe", HGRAD)
@@ -55,7 +56,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(b.getName(), a.getName())
 		self.assertEqual(b.getSpace(), a.getSpace())
 		
-  #"""Test VarFactory.py's trial() method"""
+	"""Test VarFactory.py's trial() method"""
 	def testTrial(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Billy Joe", HGRAD)
@@ -74,7 +75,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[1].ID(), b.ID())
 		self.assertEqual(array[2].ID(), c.ID())
 
-	#"""Test VarFactory.py's trialIDs() method"""
+	"""Test VarFactory.py's trialIDs() method"""
 	def testTrialIDs(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Liam", HGRAD)
@@ -85,7 +86,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[1].ID(), b.ID())
 		self.assertEqual(array[2].ID(), c.ID())
 
-	#"""Test VarFactory.py's fieldVars() method"""
+	"""Test VarFactory.py's fieldVars() method"""
 	def testFieldIDs(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Liam", HGRAD)
@@ -96,7 +97,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[1].getName(), b.getName())
 		self.assertEqual(array[2].getName(), c.getName())
 
-	#"""Test VarFactory.py's fluxVars() method"""
+	"""Test VarFactory.py's fluxVars() method"""
 	def testFluxIDs(self):
 		factory = VarFactory()
 		a = factory.fluxVar("Liam", HGRAD)
@@ -107,7 +108,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[1].getName(), b.getName())
 		self.assertEqual(array[2].getName(), c.getName())
 
-	#"""Test VarFactory.py's traceVars() method"""
+	"""Test VarFactory.py's traceVars() method"""
 	def testtraceIDs(self):
 		factory = VarFactory()
 		a = factory.traceVar("Liam", HGRAD)
@@ -117,6 +118,10 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[0].getName(), a.getName())
 		self.assertEqual(array[1].getName(), b.getName())
 		self.assertEqual(array[2].getName(), c.getName())
+
+
+
+
 # Run the tests:
 if (__name__ == '__main__'):
   unittest.main()
