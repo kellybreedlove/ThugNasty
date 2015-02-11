@@ -1,11 +1,12 @@
 from Solution import *
+from Mesh import *
 import unittest
 
 class TestSolution(unittest.TestCase):
 
-    #"""Test Solution.py's Solution() method"""
-    #def test_Solution(self):
-    #    self.assert()
+    """Test Solution.py's Solution() method"""
+    def test_Solution(self):
+        self.assert()
 
     """Test Solution.py's Solution() method"""
     def test_Solution(self):

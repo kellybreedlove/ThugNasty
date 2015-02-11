@@ -1,9 +1,9 @@
-#from TestVar import *
-from TestVarFactory import *
+from TestVar import *
+#from TestVarFactory import *
 #from Solution import *
 import unittest
 
-testSuite = unittest.makeSuite(TestVarFactory)
+testSuite = unittest.makeSuite(TestVar)
 #testSuite.addTest(unittest.makeSuite(TestVar))
 #testSuite.addTest(unittest.makeSuite(TestSolution))
 
