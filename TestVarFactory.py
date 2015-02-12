@@ -60,7 +60,7 @@ class TestVarFactory(unittest.TestCase):
 	def testTrial(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Billy Joe", HGRAD)
-		#b = factory.test(a.ID()) #fix causes core to dump
+		b = factory.trial(a.ID()) #fix causes core to dump
 		self.assertEqual(b.name(), a.name())
 		self.assertEqual(b.space(), a.space())
 
@@ -87,18 +87,18 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[2], c.ID())
 
 	"""Test VarFactory.py's fieldVars() method"""
-	def testFieldIDs(self):
+	def testFieldVars(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Liam", HGRAD)
 		b = factory.fieldVar("Crowe", HGRAD)
 		c = factory.fieldVar("Noris", HGRAD)
 		array = factory.fieldVars()
-		self.assertEqual(array[0], a.ID())
-		self.assertEqual(array[1], b.ID())
-		self.assertEqual(array[2], c.ID())
+		self.assertEqual(array[0].name(), a.name())
+		self.assertEqual(array[1].name(), b.name())
+		self.assertEqual(array[2].name(), c.name())
 
 	"""Test VarFactory.py's fluxVars() method"""
-	def testFluxIDs(self):
+	def testFluxVars(self):
 		factory = VarFactory()
 		a = factory.fluxVar("Liam")
 		b = factory.fluxVar("Crowe")
@@ -109,7 +109,7 @@ class TestVarFactory(unittest.TestCase):
 		self.assertEqual(array[2].name(), c.name())
 
 	"""Test VarFactory.py's traceVars() method"""
-	def testtraceIDs(self):
+	def testtraceVars(self):
 		factory = VarFactory()
 		a = factory.traceVar("Liam", HGRAD)
 		b = factory.traceVar("Crowe", HGRAD)
