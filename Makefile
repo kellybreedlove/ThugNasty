@@ -25,6 +25,6 @@ _%.so : %_wrap.o
 
 % : _%.so ;
 
-all : Var VarFactory LinearTerm PoissonFormulation Solution
+all : Var VarFactory LinearTerm PoissonFormulation Solution Mesh MeshFactory
 
 .PRECIOUS : _%.so

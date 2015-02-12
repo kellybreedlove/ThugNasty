@@ -11,7 +11,7 @@ class TestVarFactory(unittest.TestCase):
 		a = factory.testVar("Billy Joe", HGRAD)
 		b = factory.testVar("Liam", HGRAD)
 		self.assertEqual(a.name(), "Billy Joe")
-		self.assertEqual(a.getSpace(), HGRAD) 
+		self.assertEqual(a.space(), HGRAD) 
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
 
 	"""Test VarFactory.py's FieldVar() method"""
@@ -25,9 +25,9 @@ class TestVarFactory(unittest.TestCase):
 	"""Test VarFactory.py's fluxVar() method"""
  	def testFluxVar(self):
 		factory = VarFactory()
-		lt = LinearTerm()
-		a = factory.fluxVar("Crowe", lt)
-		b = factory.fluxVar("Liam", lt)
+		#lt = LinearTerm()
+		a = factory.fluxVar("Crowe")
+		b = factory.fluxVar("Liam")
 		self.assertEqual(a.name(), "Crowe")#check name
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
 
@@ -44,25 +44,25 @@ class TestVarFactory(unittest.TestCase):
 		factory = VarFactory()
 		a = factory.traceVar("Crowe", HGRAD)
 		b = factory.traceVar("Liam", HGRAD)
-		self.assertEqual(a.getName(), "Crowe")#check name
+		self.assertEqual(a.name(), "Crowe")#check name
 		self.assertNotEqual(a.ID(), b.ID()) #different IDs
-		self.assertEqual(a.getSpace(), HGRAD)
+		self.assertEqual(a.space(), HGRAD)
 	
 	"""Test VarFactory.py's test() method"""
 	def testTest(self):
 		factory = VarFactory()
 		a = factory.testVar("Billy Joe", HGRAD)
-		b = test(a.ID())
+		b = factory.test(a.ID())
 		self.assertEqual(b.name(), a.name())
-		self.assertEqual(b.getSpace(), a.getSpace())
+		self.assertEqual(b.space(), a.space())
 		
 	"""Test VarFactory.py's trial() method"""
 	def testTrial(self):
 		factory = VarFactory()
 		a = factory.fieldVar("Billy Joe", HGRAD)
-		b = test(a.ID())
+		#b = factory.test(a.ID()) #fix causes core to dump
 		self.assertEqual(b.name(), a.name())
-		self.assertEqual(b.getSpace(), a.getSpace())
+		self.assertEqual(b.space(), a.space())
 
 	#"""Test VarFactory.py's testIDs() method"""
 	def testTestIDs(self):
@@ -71,9 +71,9 @@ class TestVarFactory(unittest.TestCase):
 		b = factory.testVar("Crowe", HGRAD)
 		c = factory.testVar("Noris", HGRAD)
 		array = factory.testIDs()
-		self.assertEqual(array[0].ID(), a.ID())
-		self.assertEqual(array[1].ID(), b.ID())
-		self.assertEqual(array[2].ID(), c.ID())
+		self.assertEqual(array[0], a.ID())
+		self.assertEqual(array[1], b.ID())
+		self.assertEqual(array[2], c.ID())
 
 	"""Test VarFactory.py's trialIDs() method"""
 	def testTrialIDs(self):
@@ -82,9 +82,9 @@ class TestVarFactory(unittest.TestCase):
 		b = factory.fieldVar("Crowe", HGRAD)
 		c = factory.fieldVar("Noris", HGRAD)
 		array = factory.trialIDs()
-		self.assertEqual(array[0].ID(), a.ID())
-		self.assertEqual(array[1].ID(), b.ID())
-		self.assertEqual(array[2].ID(), c.ID())
+		self.assertEqual(array[0], a.ID())
+		self.assertEqual(array[1], b.ID())
+		self.assertEqual(array[2], c.ID())
 
 	"""Test VarFactory.py's fieldVars() method"""
 	def testFieldIDs(self):
@@ -93,16 +93,16 @@ class TestVarFactory(unittest.TestCase):
 		b = factory.fieldVar("Crowe", HGRAD)
 		c = factory.fieldVar("Noris", HGRAD)
 		array = factory.fieldVars()
-		self.assertEqual(array[0].name(), a.name())
-		self.assertEqual(array[1].name(), b.name())
-		self.assertEqual(array[2].name(), c.name())
+		self.assertEqual(array[0], a.ID())
+		self.assertEqual(array[1], b.ID())
+		self.assertEqual(array[2], c.ID())
 
 	"""Test VarFactory.py's fluxVars() method"""
 	def testFluxIDs(self):
 		factory = VarFactory()
-		a = factory.fluxVar("Liam", HGRAD)
-		b = factory.fluxVar("Crowe", HGRAD)
-		c = factory.fluxVar("Noris", HGRAD)
+		a = factory.fluxVar("Liam")
+		b = factory.fluxVar("Crowe")
+		c = factory.fluxVar("Noris")
 		array = factory.fluxVars()
 		self.assertEqual(array[0].name(), a.name())
 		self.assertEqual(array[1].name(), b.name())
@@ -115,19 +115,15 @@ class TestVarFactory(unittest.TestCase):
 		b = factory.traceVar("Crowe", HGRAD)
 		c = factory.traceVar("Noris", HGRAD)
 		array = factory.traceVars()
-<<<<<<< HEAD
+
 		self.assertEqual(array[0].name(), a.name())
 		self.assertEqual(array[1].name(), b.name())
 		self.assertEqual(array[2].name(), c.name())
-=======
-		self.assertEqual(array[0].getName(), a.getName())
-		self.assertEqual(array[1].getName(), b.getName())
-		self.assertEqual(array[2].getName(), c.getName())
 
 
 
 
->>>>>>> 307e71409dab197340644e39dd441029565579f6
+
 # Run the tests:
 if (__name__ == '__main__'):
   unittest.main()
