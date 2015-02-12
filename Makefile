@@ -25,6 +25,10 @@ _%.so : %_wrap.o
 
 % : _%.so ;
 
+<<<<<<< HEAD
 all : Var VarFactory LinearTerm PoissonFormulation Solution Mesh MeshFactory
+=======
+all : Var VarFactory LinearTerm PoissonFormulation Solution StokesVGPFormulation Mesh MeshFactory Function RHS BC IP
+>>>>>>> 0c62243d04d435f256e00aeaf7edd662e5bc41bb
 
 .PRECIOUS : _%.so

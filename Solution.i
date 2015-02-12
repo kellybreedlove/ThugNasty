@@ -15,11 +15,14 @@ using namespace std;
 
 class Solution {
  public:
+  //static SolutionPtr solution(MeshPtr mesh, BCPtr bc = Teuchos::null,
+  //                          RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null);
   Solution(MeshPtr mesh, BCPtr bc = Teuchos::null,
-	   RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null );
+  	   RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null );
+  Solution(const Solution &soln);
   int solve();
   void addSolution(SolutionPtr soln, double weight,
-		 bool allowEmptyCells = false, bool replaceBoundaryTerms=false);
+		   bool allowEmptyCells = false, bool replaceBoundaryTerms=false);
   void addSolution(SolutionPtr soln, double weight,
 		   set<int> varsToAdd, bool allowEmptyCells = false);
   void clear();
