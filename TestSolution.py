@@ -21,14 +21,14 @@ class TestSolution(unittest.TestCase):
         self.assertIsNotNone(s) #make sure some object exists
         
 
-    #"""Test Solution.py's Solution() copy constructor"""
-    #def test_Solution(self):
-        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        #poissonBF = poissonForm.bf()
-        #mesh2 = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
-        #s1 = Solution.Solution_solution(mesh2)
-        #s2 = Solution.Solution(s1)
-        #self.assertEqual(s1, s2) #make sure some object exists
+    """Test Solution.py's Solution() copy constructor"""
+    def test_Solution(self):
+        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        poissonBF = poissonForm.bf()
+        mesh2 = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
+        s1 = Solution.Solution_solution(mesh2)
+        s2 = Solution.Solution(s1)
+        self.assertEqual(s1, s2) #make sure some object exists
 
 
     """Test Solution.py's addSolution() method"""
@@ -182,13 +182,24 @@ class TestSolution(unittest.TestCase):
 
 
     #"""Test Solution.py's setIP() and ip() method"""
-    #def test_ip(self):
-
+    def test_ip(self):
+        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        poissonBF = poissonForm.bf()
+        mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
+        s = Solution.Solution_solution(mesh)
+        ip = IP.IP()
+        s.setIP(ip)
+        assertEqual(s.IP(), ip)
 
         
 
     #"""Test Solution.py's save() method"""
-    #def test_save(self):
+    def test_save(self):
+        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        poissonBF = poissonForm.bf()
+        mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
+        s = Solution.Solution_solution(mesh)
+        s.save("hello!")
 
     #"""Test Solution.py's load() method"""
     #def test_load(self):
