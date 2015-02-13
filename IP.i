@@ -4,10 +4,11 @@
 %}
 
 %include "std_string.i"
+%nodefaultctor IP; 
 
 class IP{
 public:
-IP();
+static IPPtr ip();
 void addTerm(LinearTermPtr a);
 void addTerm(VarPtr v);
 LinearTermPtr evaluate(map< int, FunctionPtr> &varFunctions);
