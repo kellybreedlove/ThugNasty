@@ -3,8 +3,10 @@
 #include "Solution.h"
 %}
 
+%include "std_string.i"
 %include "std_set.i"
 %include "std_map.i"
+
 
 namespace std {
   %template(SetInt) set<int>;
@@ -15,8 +17,6 @@ using namespace std;
 
 class Solution {
  public:
-  //static SolutionPtr solution(MeshPtr mesh, BCPtr bc = Teuchos::null,
-  //                          RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null);
   Solution(MeshPtr mesh, BCPtr bc = Teuchos::null,
   	   RHSPtr rhs = Teuchos::null, IPPtr ip = Teuchos::null );
   Solution(const Solution &soln);

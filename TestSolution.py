@@ -10,6 +10,7 @@ import RHS
 import IP
 import unittest
 
+
 class TestSolution(unittest.TestCase):
 
     """Test Solution.py's Solution() constructor"""
@@ -21,17 +22,6 @@ class TestSolution(unittest.TestCase):
         self.assertIsNotNone(s) #make sure some object exists
 
         
-
-    #"""Test Solution.py's Solution() copy constructor"""
-    #def test_Solution(self):
-        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        #poissonBF = poissonForm.bf()
-        #mesh2 = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
-        #s1 = Solution.Solution_solution(mesh2)
-        #s2 = Solution.Solution(s1)
-        #self.assertNotNone(s2) #make sure some object exists
-
-
 
     """Test Solution.py's addSolution() method"""
     def test_addSolution(self):
@@ -142,14 +132,6 @@ class TestSolution(unittest.TestCase):
         self.assertNotEqual(0.0, r.L2NormOfSolution(0)) #L2Norm can't be 0 after projection
 
 
-    #"""Test Solution.py's setWriteMatrixToFile() method"""
-    #def test_setWriteMatrixToFile(self):
-
-    #"""Test Solution.py's setWriteMatrixToMatrixMarketFile() method"""
-    #def test_setWriteMatrixToMatrixMarketFile(self):
-        
-    #"""Test Solution.py's setWriteRHSToMatrixMarketFile() method"""
-    #def test_setWriteRHSToMatrixMarketFile(self):
         
     """Test Solution.py's mesh() method"""
     def test_mesh(self):
@@ -202,10 +184,10 @@ class TestSolution(unittest.TestCase):
         s = Solution.Solution_solution(mesh)
         ip = IP.IP_ip()
         s.setIP(ip)
+        success = s.ip()
         #self.assertEqual(s.IP(), ip)
         # i want to test that what I set is equal to what I used to set it with, but
         # since that won't work, I can at least test that they behave in the same way
-        #self.assertEqual( )
         
 
 
@@ -221,6 +203,17 @@ class TestSolution(unittest.TestCase):
 
     #"""Test Solution.py's load() method"""
     #def test_load(self):
+    #"""Test Solution.py's save() and load() method"""
+    #def test_save_and_load(self):
+        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        #poissonBF = poissonForm.bf()
+        #mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
+        #s1 = Solution.Solution_solution(mesh)
+        #st = "prefix"
+        #s1.save(st)
+        #s2 = s1.load(poissonBF, "string")
+        #assertEqual(s1.s2)
+#cannot read string without seg fault
 
 
 
@@ -240,9 +233,8 @@ class TestSolution(unittest.TestCase):
         poissonBF = poissonForm.bf()
         mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
         s = Solution.Solution_solution(mesh)
-        s.setUseCondensedSolve(False)
-        # can only verify that it works by using solve, which we can't do
-
+        s.setUseCondensedSolve(False) # if no exception, then successful test
+       
 
 
     # Run the tests:
