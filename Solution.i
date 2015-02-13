@@ -3,8 +3,10 @@
 #include "Solution.h"
 %}
 
+%include "std_string.i"
 %include "std_set.i"
 %include "std_map.i"
+
 
 namespace std {
   %template(SetInt) set<int>;

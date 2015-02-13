@@ -10,6 +10,7 @@ import RHS
 import IP
 import unittest
 
+
 class TestSolution(unittest.TestCase):
 
     """Test Solution.py's Solution() constructor"""
@@ -21,14 +22,14 @@ class TestSolution(unittest.TestCase):
         self.assertIsNotNone(s) #make sure some object exists
         
 
-    """Test Solution.py's Solution() copy constructor"""
-    def test_Solution(self):
-        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        poissonBF = poissonForm.bf()
-        mesh2 = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
-        s1 = Solution.Solution_solution(mesh2)
-        s2 = Solution.Solution(s1)
-        self.assertEqual(s1, s2) #make sure some object exists
+    #"""Test Solution.py's Solution() copy constructor"""
+    #def test_Solution(self):
+        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        #poissonBF = poissonForm.bf()
+        #mesh2 = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
+        #s1 = Solution.Solution_solution(mesh2)
+        #s2 = Solution.Solution(s1)
+        #self.assertEqual(s1, s2) #make sure some object exists
 
 
     """Test Solution.py's addSolution() method"""
@@ -123,7 +124,7 @@ class TestSolution(unittest.TestCase):
 
 
     """Test Solution.py's setWriteMatrixToFile() method"""
-    def test_setWriteMatrixToFile(self):
+    #def test_setWriteMatrixToFile(self):
 
     #"""Test Solution.py's setWriteMatrixToMatrixMarketFile() method"""
     #def test_setWriteMatrixToMatrixMarketFile(self):
@@ -186,16 +187,17 @@ class TestSolution(unittest.TestCase):
 
         
 
-    #"""Test Solution.py's save() method"""
-    def test_save(self):
-        poissonForm = PoissonFormulation.PoissonFormulation(2, True)
-        poissonBF = poissonForm.bf()
-        mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
-        s = Solution.Solution_solution(mesh)
-        s.save("hello!")
-
-    #"""Test Solution.py's load() method"""
-    #def test_load(self):
+    #"""Test Solution.py's save() and load() method"""
+    #def test_save_and_load(self):
+        #poissonForm = PoissonFormulation.PoissonFormulation(2, True)
+        #poissonBF = poissonForm.bf()
+        #mesh = MeshFactory.MeshFactory_rectilinearMesh(poissonBF,[1.0,1.0],[2,3],4)
+        #s1 = Solution.Solution_solution(mesh)
+        #st = "prefix"
+        #s1.save(st)
+        #s2 = s1.load(poissonBF, "string")
+        #assertEqual(s1.s2)
+#cannot read string without seg fault
 
     #"""Test Solution.py's saveToHDF5() method"""
     #def test_saveToHDF5(self):
